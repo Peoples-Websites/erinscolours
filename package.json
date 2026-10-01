@@ -11,12 +11,17 @@
   "dependencies": {
     "@astrojs/preact": "^5.1.1",
     "@tailwindcss/vite": "^4.2.3",
-    "astro": "^6.1.8",
-    "glightbox": "^3.3.1",
+    "astro": "^7.3.5",
+    "astro-splide": "^2.1.1",
     "js-yaml": "^4.1.1",
-    "lucide-astro": "^0.556.0",
     "preact": "^10.29.1",
-    "sharp": "^0.34.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.2.3"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "esbuild@0.28.2": true
   }
 }

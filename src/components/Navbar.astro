@@ -2,17 +2,31 @@
 import ThemeSelector from './ThemeSelector.jsx';
 
 const menuItems = [
-  { name: 'Home', link: "/" },
-  { name: 'Gallery', link: "/collections" },
-  { name: 'About', link: "/about" },
+  { name: "Home", link: "/" },
+  { name: "Events", link: "/events" },
+  { name: "Exhibitions", link: "/exhibitions" },
+  { name: "Commissions", link: "/commissions" },
+  { name: "Portfolio", link: "/portfolio" },
+  { name: "About", link: "/about" }
 ];
 ---
 
-<nav class="w-full bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] flex items-center justify-between px-6 py-6 relative">
+<nav class="
+  w-full bg-[hsl(var(--card))]
+  text-[hsl(var(--card-foreground))]
+  flex items-center
+  justify-between px-6 py-6 relative
+
+  sticky top-0 z-50
+">
 
   <!-- Left: Logo -->
-  <a href="/" class="text-xl font-semibold tracking-tight">
-    Wayne Stephens Photography
+  <a href="/" class="
+    text-xl
+    font-semibold
+    tracking-tight
+  ">
+    erinscolours
   </a>
 
   <!-- Desktop Menu -->

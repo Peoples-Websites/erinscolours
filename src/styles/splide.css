@@ -1,0 +1,63 @@
+/* general carousel image style */
+.carousel-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* vertical crop positioning */
+.crop-top {
+  object-position: top;      /* show top part of image */
+}
+.crop-center {
+  object-position: center;   /* default */
+}
+.crop-bottom {
+  object-position: bottom;   /* show bottom part of image */
+}
+
+/* finer vertical adjustments */
+.crop-20 { object-position: 50% 20%; }  /* show mostly the top */
+.crop-40 { object-position: 50% 40%; }  /* shift slightly down */
+.crop-60 { object-position: 50% 60%; }  /* show more of the bottom */
+.crop-80 { object-position: 50% 80%; }  /* almost bottom aligned */
+
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.details {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  bottom: -40%;
+  left: 15%;
+  background-color: rgba(239, 239, 231, 0.8);
+  color: black;
+  transition: bottom 1s, background-color 1s;
+}
+
+.card > a:hover .details,
+.card > a:focus .details {
+  bottom: 0;
+  background-color: rgba(239, 239, 231, 1.0);
+}
+

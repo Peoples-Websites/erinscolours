@@ -1,0 +1,169 @@
+---
+import "@splidejs/splide/css"
+import { Splide, SplideSlide } from 'astro-splide';
+
+import "../styles/splide.css";
+---
+
+<!-- not-content is used because this is using astro starlight
+     - without it, the 3 dots in the sliders are not aligned -->
+<!-- check for options at https://splidejs.com/guides/options/ -->
+
+<Splide class = "not-content"
+  options = {
+    {
+      type: "loop",
+      perPage: 1,
+      perMove: 1,
+      heightRatio: 1.0,
+      autoplay: true,
+      interval: 4000,
+      speed: 1000,
+      pauseOnHover: true,
+      mediaQuery: "min",
+      breakpoints: {
+        640: {
+          perPage: 3,
+          heightRatio: 0.33,
+        },
+      }
+    }
+  }
+>
+  <SplideSlide>
+    <div class="card">
+      <a href="/posts-events/2025/post-001">
+        <img class="carousel-img crop-center" src="/pics/2025/bradford-2025-walls-morrisons-mural.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Serving the District</h2>
+          <h3>Event</h3>
+          <h4>2025</h4>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-top" src="/pics/2025/bradford-art-show-dec-2025.jpeg" alt="" style="width: 100%;" />
+        <div class="details">
+          <h2>Bradford Art Show</h2>
+          <h3>Exhibition</h3>
+          <h4>December, 2025</h4>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-bottom" src="/pics/2025/construction-portfolio-work.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/dancing-together-A4-portfolio-work.png" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/drawing-cities-A2-paper-mixed-media.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-60" src="/pics/2025/erin-painting-hull-street-jam-2025.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/fish-shop-mural-work-july-2025-hull-paint-jam.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/flower-repeat-border-print-screen-print-paper.jpeg" alt="" style="width: 100%;" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/grow-from-within-A3-portfolio.png" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/2025/pics/horsforth-walk-of-art-workshop.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-center" src="/pics/2025/keighley-creative-live-mural-with-the-drawing-box-august-2025.jpg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+  <SplideSlide>
+    <div class="card">
+      <a href="../">
+        <img class="carousel-img crop-60" src="/pics/2025/lets-dance-A3-gouache-painting-portfolio.jpeg" alt="" style="width: 100%" />
+        <div class="details">
+          <h2>Hellooo!</h2>
+        </div>
+      </a>
+    </div>
+  </SplideSlide>
+
+</Splide>

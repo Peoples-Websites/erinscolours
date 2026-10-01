@@ -1,44 +1,13 @@
 
 @import "tailwindcss";
 
+@import "./googlefonts.css";
+
 @import "./themes.css";
 
 
-/* GLightbox */
+img { margin: 50px; }
 
-/* Force all caption text to white */
-.glightbox-container .gslide-description *,
-.glightbox-container .gslide-desc *,
-.glightbox-container .gdesc-inner * {
-  color: #fff !important;
-}
 
-.glightbox-container .gslide-description {
-  background: rgba(0, 0, 0, 0.0) !important;
-  /* backdrop-filter: blur(6px); */
-}
 
-/* GLightbox quirk: the text colour is being set inline on a <p> inside the caption,
-   so a normal container rule won’t override it; you need to target the actual elements
-   that contain the text.
 
-   GLightbox outputs something like:
-
-     <div class="gslide-description">
-       <div class="gdesc-inner">
-         <p style="color:#000">My description</p>
-       </div>
-     </div>
-
-     The * selector + !important forces white on:
-      - <p>
-      - <span>
-      - <strong>
-      - anything else inside the caption
-
-/* Tweak spacing and font */
-.glightbox-container .gdesc-inner {
-  padding: 1rem 1.25rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
