@@ -1,5 +1,5 @@
 ---
-import PaintSplash from "./PaintSplash.astro";
+import PaintSplash1 from "./PaintSplash1.astro";
 ---
 
 <section class="
@@ -11,25 +11,20 @@ import PaintSplash from "./PaintSplash.astro";
 >
 
   <!-- Decorative paint -->
-  <div class="
-      absolute
-      -left-16
-      top-16
-      hidden
-      rotate-12
-      md:block
-    "
-  >
-    <PaintSplash colour="bg-yellow-400" />
+  <div class="absolute -left-16 top-16 hidden md:block">
+    <PaintSplash1
+      colour="#facc15"
+      rotate={12}
+      class="w-48"
+    />
   </div>
 
-  <div class="
-      absolute
-      bottom-0
-      left-0
-    "
-  >
-    <PaintSplash colour="bg-pink-400" />
+  <div class="absolute bottom-0 left-0">
+    <PaintSplash1
+      colour="#f472b6"
+      rotate={-8}
+      class="w-40"
+    />
   </div>
 
   <div class="

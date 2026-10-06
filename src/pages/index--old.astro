@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Splide from '../components/SplideCarousel.astro';
+---
+
+<Layout>
+
+  <div
+    class="
+      text-8xl
+      chewy-regular
+      text-[hsl(var(--card-foreground))]
+    "
+  >
+    Erin's Colours
+  </div>
+
+  <container class="flex content-around">
+
+    <div class="flex-1">
+      <img src="/pics/erin.jpg" alt="Erin sitting in front of one of her pictures" width="394" height="507">
+    </div>
+
+    <div class="flex-1">
+      <p class="text-xl m-5">Hi, I'm Erin, a community artist, illustrator, and printmaker based in West Yorkshire, UK.</p>
+      <div class="m-5">
+        <p class="text-xl">About me:</p>
+        <ul>
+          <li><b>Style:</b> Playful, intuitive expressionism using bright colors, bold shapes, and mixed-media printmaking.</li>
+          <li><b>Inclusion:</b> A passion for accessibility strongly influences my process-led art and community workshops.</li>
+          <li><b>Affiliations:</b> I am a studio holder with East Street Arts in Leeds.</li>
+        </ul>
+      </div>
+      <div class="m-5">
+        <p class="text-xl">Recent Projects & Exhibitions</p>
+        <ul>
+          <li>We Like to Dance: A solo exhibition of intuitive mixed-media prints showcased at Alfred Bar (Meanwood, Leeds) running through October 2026.</li>
+          <li>Community & Education: I conduct printmaking workshops and school projects, such as the Opening Doors project in York and sessions at the Bradford Industrial Museum.</li>
+        </ul>
+      </div>
+    </div>
+
+  </container>
+
+  <Splide />
+
+</Layout>
