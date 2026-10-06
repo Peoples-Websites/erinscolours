@@ -1,0 +1,198 @@
+---
+const artworks = [
+  {
+    title: "Sunny Day, Big Dreams",
+    type: "Acrylic on canvas",
+    image: "/images/work/sunny-day.jpg",
+    alt: "Colourful landscape painting by Erin Nicholson",
+  },
+  {
+    title: "Colourful Minds",
+    type: "Acrylic on canvas",
+    image: "/images/work/colourful-minds.jpg",
+    alt: "Colourful expressive portrait by Erin Nicholson",
+  },
+  {
+    title: "Coastal Colours",
+    type: "Acrylic on canvas",
+    image: "/images/work/coastal-colours.jpg",
+    alt: "Colourful coastal painting by Erin Nicholson",
+  },
+  {
+    title: "Happy Cat",
+    type: "Acrylic on canvas",
+    image: "/images/work/happy-cat.jpg",
+    alt: "Brightly coloured cat painting by Erin Nicholson",
+  },
+];
+---
+
+<section
+
+  id="work"
+  class="
+    bg-teal-50
+    px-6
+    py-20
+    lg:px-8
+    lg:py-28
+  "
+  aria-labelledby="work-title"
+>
+  <div class="
+      mx-auto
+      max-w-7xl
+    "
+  >
+
+    <!-- Heading -->
+    <div
+      class="
+        mb-10
+        flex
+        flex-col
+        justify-between
+        gap-5
+        sm:flex-row
+        sm:items-end
+      "
+    >
+
+      <div>
+        <p
+          class="
+            font-bold
+            uppercase
+            tracking-[0.2em]
+            text-orange-500
+          "
+        >
+          A little colour
+        </p>
+
+        <h2
+          id="work-title"
+          class="
+            mt-2
+            text-5xl
+            font-black
+            tracking-tight
+            text-teal-700
+            sm:text-6xl
+          "
+        >
+          Featured Work
+        </h2>
+
+        <div
+          class="
+            mt-5
+            h-2
+            w-24
+            rotate-[2deg]
+            rounded-full
+            bg-pink-400
+          "
+        ></div>
+
+      </div>
+
+      <a
+        href="/gallery"
+        class="font-bold text-teal-700 transition hover:text-orange-500"
+      >
+        View more work
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- Artwork grid -->
+    <div
+      class="
+        grid
+        gap-6
+        sm:grid-cols-2
+        lg:grid-cols-4
+      "
+    >
+
+      {artworks.map((artwork) => (
+        <article class="group">
+
+          <a href="/gallery" class="block">
+
+            <div
+              class="
+                relative
+                aspect-square
+                overflow-hidden
+                rounded-3xl
+                bg-white
+                shadow-sm
+              "
+            >
+              <img
+                src={artwork.image}
+                alt={artwork.alt}
+                loading="lazy"
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+
+              <!-- Hover overlay -->
+              <div
+                class="
+                  absolute
+                  inset-0
+                  flex
+                  items-end
+                  bg-gradient-to-t
+                  from-teal-950/50
+                  to-transparent
+                  opacity-0
+                  transition
+                  group-hover:opacity-100
+                "
+              >
+                <span class="
+                    p-5
+                    font-bold
+                    text-white
+                  "
+                >
+                  View artwork →
+                </span>
+
+              </div>
+
+            </div>
+
+            <h3
+              class="
+                mt-4
+                text-lg
+                font-bold
+                text-slate-900
+              "
+            >
+              {artwork.title}
+            </h3>
+
+            <p class="
+                mt-1
+                text-sm
+                text-slate-600
+              "
+            >
+              {artwork.type}
+            </p>
+
+          </a>
+
+        </article>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>

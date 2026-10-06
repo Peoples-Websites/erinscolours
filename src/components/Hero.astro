@@ -1,0 +1,147 @@
+---
+import PaintSplash from "./PaintSplash.astro";
+---
+
+<section class="
+    relative
+    overflow-hidden
+    bg-amber-50
+  "
+  aria-labelledby="hero-title"
+>
+
+  <!-- Decorative paint -->
+  <div class="
+      absolute
+      -left-16
+      top-16
+      hidden
+      rotate-12
+      md:block
+    "
+  >
+    <PaintSplash colour="bg-yellow-400" />
+  </div>
+
+  <div class="
+      absolute
+      bottom-0
+      left-0
+    "
+  >
+    <PaintSplash colour="bg-pink-400" />
+  </div>
+
+  <div class="
+      mx-auto
+      grid
+      max-w-7xl
+      lg:grid-cols-2
+    "
+  >
+
+    <!-- Text -->
+    <div
+      class="relative z-10 flex items-center px-6 py-20 sm:py-28 lg:px-12 lg:py-32"
+    >
+      <div class="max-w-xl">
+
+        <p
+          class="
+            mb-5
+            inline-block
+            rotate-[-2deg]
+            font-bold
+            uppercase
+            tracking-[0.2em]
+            text-teal-700
+          "
+        >
+          Community Artist
+        </p>
+
+        <h1
+          id="hero-title"
+          class="text-6xl font-black leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl"
+        >
+          <span class="text-pink-500">Erin's</span><br /><span class="text-teal-700">Colours</span>
+        </h1>
+
+        <div
+          class="
+            my-7
+            h-2
+            w-32
+            rotate-[-2deg]
+            rounded-full
+            bg-yellow-400
+          "
+        ></div>
+
+        <p
+          class="max-w-lg text-2xl font-bold leading-snug text-indigo-950"
+        >
+          Art. People. Brighter Together.
+        </p>
+
+        <p
+          class="
+            mt-5
+            max-w-lg
+            text-lg
+            leading-8
+            text-slate-700
+          "
+        >
+          Original artwork and community projects by Erin Nicholson, Community Artist.
+        </p>
+
+        <div class="mt-8">
+          <a
+            href="#work"
+            class="inline-flex items-center gap-3 rounded-full bg-yellow-400 px-7 py-4 font-bold text-slate-900 shadow-lg shadow-yellow-400/20 transition hover:-translate-y-1 hover:bg-yellow-300 hover:shadow-xl"
+          >
+            Explore the Gallery
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Hero artwork -->
+    <div class="
+        relative
+        min-h-[450px]
+        overflow-hidden
+        lg:min-h-[650px]
+      "
+    >
+
+      <!-- Replace this with Erin's actual artwork -->
+      <img
+        src="/images/hero.jpg"
+        alt="A colourful painting by Erin Nicholson"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+
+      <!-- Soft edge -->
+      <div
+        class="
+          absolute
+          inset-y-0
+          left-0
+          hidden
+          w-32
+          bg-gradient-to-r
+          from-amber-50
+          to-transparent
+          lg:block
+        "
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>

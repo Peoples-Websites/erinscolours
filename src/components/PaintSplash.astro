@@ -1,0 +1,29 @@
+---
+interface Props {
+  colour?: string;
+  class?: string;
+}
+
+const {
+  colour = "bg-yellow-400",
+  class: className = "",
+} = Astro.props;
+---
+
+
+<div
+
+  class:list={[
+    "
+      h-12
+      w-40
+      rounded-[50%]
+      opacity-80
+    ",
+    colour,
+    className,
+  ]}
+  aria-hidden="true"
+>
+
+</div>
