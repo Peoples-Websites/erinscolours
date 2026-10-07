@@ -10,4 +10,11 @@ img { margin: 50px; }
 
 
 
+@theme {
+  --font-display: "Permanent Marker", cursive;
+  --font-body: "Nunito", sans-serif;
+}
+
+
+
 

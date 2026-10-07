@@ -11,19 +11,27 @@ import PaintSplash1 from "./PaintSplash1.astro";
 >
 
   <!-- Decorative paint -->
-  <div class="absolute -left-16 top-16 hidden md:block">
+  <div class="absolute -left-16 -top-24 hidden md:block">
     <PaintSplash1
       colour="#facc15"
-      rotate={12}
-      class="w-48"
+      rotate={0}
+      class="w-64"
     />
   </div>
 
-  <div class="absolute bottom-0 left-0">
+  <div class="absolute bottom-16 -left-64">
+    <PaintSplash1
+      colour="#72f4b6"
+      rotate={-90}
+      class="w-72"
+    />
+  </div>
+
+  <div class="absolute bottom-16 -left-64">
     <PaintSplash1
       colour="#f472b6"
-      rotate={-8}
-      class="w-40"
+      rotate={-45}
+      class="w-80"
     />
   </div>
 
@@ -57,9 +65,15 @@ import PaintSplash1 from "./PaintSplash1.astro";
 
         <h1
           id="hero-title"
-          class="text-6xl font-black leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl"
+          class="font-display text-[clamp(4.5rem,11vw,8rem)] leading-[0.72] tracking-tight"
         >
-          <span class="text-pink-500">Erin's</span><br /><span class="text-teal-700">Colours</span>
+          <span class="block whitespace-nowrap">
+            <span class="text-pink-500">E</span><span class="text-orange-500">r</span><span class="text-yellow-500">i</span><span class="text-red-500">n</span><span class="text-orange-500">'</span><span class="text-orange-500">s</span>
+          </span>
+
+          <span class="block whitespace-nowrap">
+            <span class="text-teal-600">C</span><span class="text-green-600">o</span><span class="text-blue-700">l</span><span class="text-indigo-700">o</span><span class="text-purple-600">u</span><span class="text-pink-500">r</span><span class="text-orange-500">s</span>
+          </ span>
         </h1>
 
         <div
@@ -115,9 +129,9 @@ import PaintSplash1 from "./PaintSplash1.astro";
 
       <!-- Replace this with Erin's actual artwork -->
       <img
-        src="/images/hero.jpg"
-        alt="A colourful painting by Erin Nicholson"
-        class="absolute inset-0 h-full w-full object-cover"
+        src="/pics/2025/make-some-music.jpeg"
+        alt="A colourful painting by Erin Nicholson called "Make Some Music"
+        class="absolute inset-0 w-full object-cover"
       />
 
       <!-- Soft edge -->

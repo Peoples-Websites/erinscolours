@@ -1,0 +1,63 @@
+
+<svg
+
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1000 800"
+  preserveAspectRatio="none"
+>
+  <defs>
+
+    <!--
+      This creates a slightly irregular / dry-brush edge.
+      The turbulence is used only to distort the mask,
+      not the actual artwork.
+    -->
+    <filter
+      id="rough-edge"
+      x="-20%"
+      y="-10%"
+      width="140%"
+      height="120%"
+    >
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.025 0.12"
+        numOctaves="2"
+        seed="8"
+      />
+
+      <feDisplacementMap
+        in="SourceGraphic"
+        scale="55"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+
+  </defs>
+
+  <!--
+    White = visible image
+    Black / transparent = hidden image
+  -->
+  <path
+    d="
+      M 105 0
+
+      C 125 35 88 70 118 105
+      C 145 135 92 165 125 205
+      C 155 240 94 280 120 315
+      C 145 350 82 390 115 425
+      C 145 460 90 500 120 535
+      C 150 570 82 610 112 650
+      C 145 690 92 730 125 800
+
+      L 1000 800
+      L 1000 0
+      Z
+    "
+    fill="white"
+    filter="url(#rough-edge)"
+  />
+
+</svg>
