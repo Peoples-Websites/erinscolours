@@ -12,75 +12,75 @@ import PaintSplash1 from "./PaintSplash1.astro";
 
   <!-- Decorative paint -->
   <div class="absolute -left-16 -top-24 hidden md:block">
-    <PaintSplash1
-      colour="#facc15"
-      rotate={0}
-      class="w-64"
-    />
+    <PaintSplash1 colour="#facc15" rotate={0} class="w-64"/>
+  </div>
+  <div class="absolute bottom-16 -left-64">
+    <PaintSplash1 colour="#b6f472" rotate={-90} class="w-72"/>
+  </div>
+  <div class="absolute bottom-16 -left-64">
+    <PaintSplash1 colour="#f472b6" rotate={-45} class="w-80"/>
   </div>
 
-  <div class="absolute bottom-16 -left-64">
-    <PaintSplash1
-      colour="#72f4b6"
-      rotate={-90}
-      class="w-72"
-    />
-  </div>
 
-  <div class="absolute bottom-16 -left-64">
-    <PaintSplash1
-      colour="#f472b6"
-      rotate={-45}
-      class="w-80"
-    />
-  </div>
+  <!--   *   *   *   main hero area   *   *   *   -->
 
   <div class="
       mx-auto
       grid
       max-w-7xl
-      lg:grid-cols-2
+      lg:grid-cols-2  <!--two columns at large size -->
     "
   >
 
-    <!-- Text -->
+
+    <!--   *   *   *   text area   *   *   *   -->
     <div
-      class="relative z-10 flex items-center px-6 py-20 sm:py-28 lg:px-12 lg:py-32"
+      class="
+        relative
+        z-10
+        flex
+        items-center
+        px-6
+        py-20
+        sm:py-28
+        lg:px-12
+        lg:py-32
+      "
     >
       <div class="max-w-xl">
 
-        <p
-          class="
-            mb-5
-            inline-block
-            rotate-[-2deg]
-            font-bold
-            uppercase
-            tracking-[0.2em]
-            text-teal-700
-          "
-        >
-          Community Artist
-        </p>
+        <p class="
+          mb-5
+          inline-block
+          rotate-[-2deg]
+          font-bold
+          uppercase
+          tracking-[0.2em]
+          text-teal-700
+        "
+        >Community Artist</p>
 
+        <!--   *   "Erin's Colours"   *   -->
         <h1
           id="hero-title"
-          class="font-display text-[clamp(4.5rem,11vw,8rem)] leading-[0.72] tracking-tight"
+          class="
+            font-display
+            text-[clamp(4.5rem,11vw,8rem)]
+            leading-[0.72]
+            tracking-tight
+          "
         >
-          <span class="block whitespace-nowrap">
-            <span class="text-pink-500">E</span><span class="text-orange-500">r</span><span class="text-yellow-500">i</span><span class="text-red-500">n</span><span class="text-orange-500">'</span><span class="text-orange-500">s</span>
-          </span>
-
-          <span class="block whitespace-nowrap">
-            <span class="text-teal-600">C</span><span class="text-green-600">o</span><span class="text-blue-700">l</span><span class="text-indigo-700">o</span><span class="text-purple-600">u</span><span class="text-pink-500">r</span><span class="text-orange-500">s</span>
-          </ span>
+          <span class="block whitespace-nowrap"><span class="text-pink-500">E</span><span class="text-orange-500">r</span><span class="text-yellow-500">i</span><span class="text-red-500">n</span><span class="text-orange-500">'</span><span class="text-orange-500">s</span></span>
+          <span class="block whitespace-nowrap"><span class="text-teal-600">C</span><span class="text-green-600">o</span><span class="text-blue-700">l</span><span class="text-indigo-700">o</span><span class="text-purple-600">u</span><span class="text-pink-500">r</span><span class="text-orange-500">s</span></ span>
         </h1>
 
+        <!--   *   underline   *   -->
         <div
           class="
             my-7
-            h-2
-            w-32
+            w-80 h-2
+            md:w-100 md:h-2
+            lg:w-120 md:h-3
             rotate-[-2deg]
             rounded-full
             bg-yellow-400
@@ -88,10 +88,14 @@ import PaintSplash1 from "./PaintSplash1.astro";
         ></div>
 
         <p
-          class="max-w-lg text-2xl font-bold leading-snug text-indigo-950"
-        >
-          Art. People. Brighter Together.
-        </p>
+          class="
+            max-w-lg
+            text-2xl
+            font-bold
+            leading-snug
+            text-indigo-950
+          "
+        >Art and People. Brighter Together.</p>
 
         <p
           class="
@@ -101,53 +105,61 @@ import PaintSplash1 from "./PaintSplash1.astro";
             leading-8
             text-slate-700
           "
-        >
-          Original artwork and community projects by Erin Nicholson, Community Artist.
-        </p>
+        >Original artwork and community projects by Erin Nicholson</p>
 
+        <!--   *   gallery link   -   *   -->
         <div class="mt-8">
           <a
             href="#work"
-            class="inline-flex items-center gap-3 rounded-full bg-yellow-400 px-7 py-4 font-bold text-slate-900 shadow-lg shadow-yellow-400/20 transition hover:-translate-y-1 hover:bg-yellow-300 hover:shadow-xl"
-          >
-            Explore the Gallery
-            <span aria-hidden="true">→</span>
+            class="
+              inline-flex
+              items-center
+              gap-3
+              rounded-full
+              bg-yellow-400
+              px-7
+              py-4
+              font-bold
+              text-slate-900
+              shadow-lg
+              shadow-yellow-400/20
+              transition
+              hover:-translate-y-1
+              hover:bg-yellow-300
+              hover:shadow-xl
+            "
+          >Explore the Gallery<span aria-hidden="true">→</span>
           </a>
         </div>
 
       </div>
+
     </div>
 
-    <!-- Hero artwork -->
+    <!--   *   *   *   artwork area   *   *   *   -->
     <div class="
-        relative
-        min-h-[450px]
-        overflow-hidden
-        lg:min-h-[650px]
-      "
-    >
+      relative
+      min-h-[450px]
+      lg:min-h-[650px]
+      overflow-hidden
 
-      <!-- Replace this with Erin's actual artwork -->
+      bg-red-100  <!-- TEMPORARY -->
+    ">
+
       <img
-        src="/pics/2025/make-some-music.jpeg"
-        alt="A colourful painting by Erin Nicholson called "Make Some Music"
-        class="absolute inset-0 w-full object-cover"
-      />
-
-      <!-- Soft edge -->
-      <div
         class="
           absolute
-          inset-y-0
-          left-0
-          hidden
-          w-32
-          bg-gradient-to-r
-          from-amber-50
-          to-transparent
-          lg:block
+          inset-0
+          max-w-auto
+          max-h-[450px]
+          lg:max-w-auto
+          lg:max-h-[650px]
         "
-      ></div>
+        src="/pics/2025/make-some-music.jpeg"
+        alt="A colourful painting by Erin Nicholson called "Make Some Music"
+      />
+
+      <!-- Soft edge - probably delete --><!--<div class="absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-amber-50 to-transparent lg:block"></div>-->
 
     </div>
 
