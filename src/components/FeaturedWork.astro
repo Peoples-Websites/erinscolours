@@ -1,28 +1,28 @@
 ---
 const artworks = [
   {
-    title: "Sunny Day, Big Dreams",
+    title: "Grow From Within",
     type: "Acrylic on canvas",
-    image: "/images/work/sunny-day.jpg",
-    alt: "Colourful landscape painting by Erin Nicholson",
+    image: "/pics/2025/grow-from-within.png",
+    alt: "Figure with a watering can beside a greenhouse",
   },
   {
-    title: "Colourful Minds",
+    title: "Mother Nature",
     type: "Acrylic on canvas",
-    image: "/images/work/colourful-minds.jpg",
-    alt: "Colourful expressive portrait by Erin Nicholson",
-  },
-  {
-    title: "Coastal Colours",
-    type: "Acrylic on canvas",
-    image: "/images/work/coastal-colours.jpg",
-    alt: "Colourful coastal painting by Erin Nicholson",
-  },
-  {
-    title: "Happy Cat",
-    type: "Acrylic on canvas",
-    image: "/images/work/happy-cat.jpg",
+    image: "/pics/2025/mother-nature.png",
     alt: "Brightly coloured cat painting by Erin Nicholson",
+  },
+  {
+    title: "Workwise graphic #1",
+    type: "Acrylic on canvas",
+    image: "/pics/2025/workwise-graphic-1.webp",
+    alt: "Example Graphic from Erin'e Workwise Commission",
+  },
+  {
+    title: "Fish Shop Mural",
+    type: "Acrylic on wood",
+    image: "/pics/2025/fish-shop-mural.jpeg",
+    alt: "Colourful mural on a fish shop theme",
   },
 ];
 ---
@@ -135,7 +135,7 @@ const artworks = [
                 src={artwork.image}
                 alt={artwork.alt}
                 loading="lazy"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                class="h-full w-full object-contain object-left-top transition duration-500 group-hover:scale-105"
               />
 
               <!-- Hover overlay -->
