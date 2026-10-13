@@ -1,6 +1,8 @@
 ---
 import PaintSplash1 from "./PaintSplash1.astro";
+import PaintSplash2 from "./PaintSplash2.astro";
 ---
+
 
 <section class="
     relative
@@ -10,14 +12,14 @@ import PaintSplash1 from "./PaintSplash1.astro";
   aria-labelledby="hero-title"
 >
 
-  <!-- Decorative paint -->
+  <!-- decorative paint splashes -->
   <div class="absolute -left-16 -top-24 hidden md:block">
-    <PaintSplash1 colour="#facc15" rotate={0} class="w-64"/>
+    <PaintSplash2 colour="#facc15" rotate={0} class="w-64"/>
   </div>
-  <div class="absolute bottom-16 -left-64">
-    <PaintSplash1 colour="#b6f472" rotate={-90} class="w-72"/>
+  <div class="absolute bottom-16 -left-80">
+    <PaintSplash2 colour="#b6f472" rotate={-90} class="w-72"/>
   </div>
-  <div class="absolute bottom-16 -left-64">
+  <div class="absolute bottom-24 -left-32">
     <PaintSplash1 colour="#f472b6" rotate={-45} class="w-80"/>
   </div>
 
