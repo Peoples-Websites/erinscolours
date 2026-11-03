@@ -1,0 +1,226 @@
+
+<section
+  id="contact"
+  class="bg-stone-50 px-6 py-20 lg:px-8"
+  aria-labelledby="contact-heading"
+>
+
+  <div class="mx-auto max-w-3xl">
+
+    <!-- Introduction -->
+    <div class="mb-12 text-center">
+
+      <p class="mb-3 text-sm font-bold uppercase tracking-widest text-orange-500">
+        Get in touch
+      </p>
+
+      <h2
+        id="contact-heading"
+        class="text-4xl font-black tracking-tight text-teal-800 sm:text-5xl"
+      >
+        Let's make something wonderful together!
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
+        Have a question, an idea, or an opportunity to work together?
+        I would love to hear from you.
+      </p>
+
+    </div>
+
+    <!-- Contact form -->
+    <form
+      id="contact-form"
+      class="space-y-6 rounded-3xl bg-white p-8 shadow-lg shadow-teal-900/5 ring-1 ring-teal-900/10 sm:p-10"
+    >
+
+      <!-- Name -->
+      <div>
+        <label
+          for="name"
+          class="mb-2 block font-bold text-teal-900"
+        >
+          Your name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          maxlength="100"
+          autocomplete="name"
+          class="w-full rounded-xl border border-teal-900/20 px-4 py-3 text-slate-800 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
+          placeholder="What should I call you?"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label
+          for="email"
+          class="mb-2 block font-bold text-teal-900"
+        >
+          Your email address
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          maxlength="254"
+          autocomplete="email"
+          class="w-full rounded-xl border border-teal-900/20 px-4 py-3 text-slate-800 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label
+          for="message"
+          class="mb-2 block font-bold text-teal-900"
+        >
+          Your message
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          required
+          maxlength="5000"
+          rows="6"
+          class="w-full resize-y rounded-xl border border-teal-900/20 px-4 py-3 text-slate-800 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
+          placeholder="What's on your mind?"
+        ></textarea>
+      </div>
+
+      <!-- Honeypot field: hidden from ordinary visitors -->
+      <div class="hidden" aria-hidden="true">
+        <label for="website">Leave this field empty</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Submission feedback -->
+      <p
+        id="form-status"
+        class="text-sm"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <!-- Submit button -->
+      <button
+        type="submit"
+        class="w-full rounded-full bg-teal-700 px-8 py-4 font-bold text-white shadow-md transition hover:bg-teal-800 focus:outline-none focus:ring-4 focus:ring-teal-600/30 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        Send your message
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<script>
+
+  // Find the form and the element used to display feedback.
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+  const status = document.querySelector<HTMLParagraphElement>("#form-status");
+
+  if (form && status) {
+
+    form.addEventListener("submit", async (event) => {
+
+      // Stop the browser's normal form submission and page reload.
+      event.preventDefault();
+
+      // Get the submit button.
+      const button = form.querySelector<HTMLButtonElement>(
+        'button[type="submit"]'
+      );
+
+      if (!button) return;
+
+      // Collect the form values.
+      const formData = new FormData(form);
+
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+        website: formData.get("website"),
+      };
+
+      // Prevent repeated submissions while the request is running.
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "";
+      status.className = "text-sm";
+
+      try {
+
+        // Send the form data to our Netlify Function.
+        const response = await fetch(
+          "/.netlify/functions/send-email",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+
+        // Convert the server's JSON response into a JavaScript object.
+        const result = await response.json();
+
+        // Handle unsuccessful responses.
+        if (!response.ok) {
+          throw new Error(
+            result.error || "Something went wrong. Please try again."
+          );
+        }
+
+        // Display the success message.
+        status.textContent =
+          "Thank you! Your message has been sent. I'll be in touch.";
+
+        status.className = "text-sm font-semibold text-teal-700";
+
+        // Clear the form.
+        form.reset();
+
+      } catch (error) {
+
+        // Display an error if the request fails.
+        status.textContent =
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.";
+
+        status.className = "text-sm font-semibold text-red-600";
+
+      } finally {
+
+        // Re-enable the button whether the request succeeded or failed.
+        button.disabled = false;
+        button.textContent = "Send your message";
+
+      }
+
+    });
+
+  }
+
+</script>

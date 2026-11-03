@@ -3,6 +3,7 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import FeaturedWork from "../components/FeaturedWork.astro";
 import CommunityCTA from "../components/CommunityCTA.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 import "../styles/global.css";
 ---
@@ -164,18 +165,16 @@ import "../styles/global.css";
     <main>
       <Hero />
       <About />
-      <FeaturedWork />
       <CommunityCTA />
+      <FeaturedWork />
+      <ContactForm />
     </main>
 
     <!-- Footer -->
-    <footer
-      id="contact"
-      class="bg-teal-900 px-6 py-10 text-white lg:px-8"
-    >
-      <div
-        class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row"
-      >
+    <footer class="bg-teal-900 px-6 py-10 text-white lg:px-8">
+
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+
         <div>
           <p class="text-2xl font-black">
             Erin's <span class="text-yellow-300">Colours</span>
@@ -187,6 +186,7 @@ import "../styles/global.css";
         </div>
 
         <div class="flex gap-6 text-sm font-semibold">
+
           <a
             href="#"
             class="transition hover:text-yellow-300"
@@ -195,6 +195,7 @@ import "../styles/global.css";
             Instagram
           </a>
 
+<!--
           <a
             href="#"
             class="transition hover:text-yellow-300"
@@ -202,19 +203,15 @@ import "../styles/global.css";
           >
             Facebook
           </a>
+-->
 
-          <a
-            href="mailto:"
-            class="transition hover:text-yellow-300"
-          >
-            Email
-          </a>
         </div>
 
         <p class="text-sm text-teal-200">
           © {new Date().getFullYear()} Erin Nicholson
         </p>
       </div>
+
     </footer>
 
   </body>
