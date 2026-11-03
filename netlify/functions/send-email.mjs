@@ -169,13 +169,13 @@ ${cleanMessage}`,
 
 
 // Netlify platform-level rate limiting
-//export const config = {
-//  path: "/.netlify/functions/send-email",
-//
-//  rateLimit: {
-//    windowLimit: 5,
-//    windowSize: 60,
-//    aggregateBy: ["ip"],
-//  },
-//};
+export const config = {
+  path: "/.netlify/functions/send-email",
+
+  rateLimit: {
+    windowLimit: 5,
+    windowSize: 60,
+    aggregateBy: ["ip", "domain"],
+  },
+};
 
