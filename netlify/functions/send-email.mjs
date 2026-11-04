@@ -1,15 +1,22 @@
+// local development needs dotenv installation and import
+// but even then it will break in school due to certificate issues
+// to run from school, root dir:
+// $env:NODE_EXTRA_CA_CERTS = "C:\Users\davisjc02\Desktop\DevPortable\exa-root-ca.cer"
+// npx.cmd netlify functions:serve
+// it's broken
+
+// but it does work on Netlify
+
+//import "dotenv/config";  // for elsewhere
+                          // don't forget to install dotenv                             
+
 
 import { Resend } from "resend";
 
 
 // return a JSON response with the appropriate HTTP status
 function jsonResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json", }, });
 }
 
 // Netlify Function entry point
@@ -17,23 +24,15 @@ export default async (request) => {
 
   // only accept POST requests
   if (request.method !== "POST") {
-    return jsonResponse(
-      { error: "Method not allowed." },
-      405
-    );
+    return jsonResponse({ error: "Method not allowed." }, 405);
   }
 
   try {
     // check the declared request size before reading the body
-    const contentLength = Number(
-      request.headers.get("content-length") || 0
-    );
+    const contentLength = Number(request.headers.get("content-length") || 0);
 
     if (contentLength > 10_000) {
-      return jsonResponse(
-        { error: "Request too large." },
-        413
-      );
+      return jsonResponse({ error: "Request too large." }, 413);
     }
 
     // read the raw request body and check its actual size
@@ -42,10 +41,7 @@ export default async (request) => {
     const bodySize = new TextEncoder().encode(rawBody).byteLength;
 
     if (bodySize > 10_000) {
-      return jsonResponse(
-        { error: "Request too large." },
-        413
-      );
+      return jsonResponse({ error: "Request too large." }, 413);
     }
 
     // parse the submitted JSON
@@ -54,10 +50,7 @@ export default async (request) => {
     try {
       body = JSON.parse(rawBody);
     } catch {
-      return jsonResponse(
-        { error: "Invalid JSON." },
-        400
-      );
+      return jsonResponse({ error: "Invalid JSON." }, 400);
     }
 
     // check that the submitted fields are strings
@@ -69,10 +62,7 @@ export default async (request) => {
       typeof message !== "string" ||
       (website !== undefined && typeof website !== "string")
     ) {
-      return jsonResponse(
-        { error: "Invalid form submission." },
-        400
-      );
+      return jsonResponse({ error: "Invalid form submission." }, 400);
     }
 
     // trim whitespace from the submitted values
@@ -82,9 +72,7 @@ export default async (request) => {
 
     // honeypot: silently accept submissions made by bots
     if (website && website.trim() !== "") {
-      return jsonResponse({
-        message: "Email sent successfully!",
-      });
+      return jsonResponse({ message: "Email sent successfully!", });
     }
 
     // basic validation
@@ -96,30 +84,20 @@ export default async (request) => {
       cleanEmail.length > 254 ||
       cleanMessage.length > 5000
     ) {
-      return jsonResponse(
-        { error: "Please check the form fields." },
-        400
-      );
+      return jsonResponse({ error: "Please check the form fields." }, 400);
     }
 
     // validate the email address
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(cleanEmail)) {
-      return jsonResponse(
-        { error: "Please enter a valid email address." },
-        400
-      );
+      return jsonResponse({ error: "Please enter a valid email address." }, 400);
     }
 
     // check that the Resend API key is configured
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured.");
-
-      return jsonResponse(
-        { error: "Email service is not configured." },
-        500
-      );
+      return jsonResponse({ error: "Email service is not configured." }, 500);
     }
 
     // initialise Resend
@@ -143,11 +121,7 @@ ${cleanMessage}`,
     // handle an error returned by Resend
     if (error) {
       console.error("Resend error:", error);
-
-      return jsonResponse(
-        { error: "The email provider could not send the email." },
-        502
-      );
+      return jsonResponse({ error: "The email provider could not send the email." }, 502);
     }
 
     // successful submission
@@ -159,10 +133,7 @@ ${cleanMessage}`,
   } catch (error) {
     console.error("Contact form error:", error);
 
-    return jsonResponse(
-      { error: "An unexpected server error occurred." },
-      500
-    );
+    return jsonResponse({ error: "An unexpected server error occurred." }, 500);
   }
 
 };
@@ -178,4 +149,3 @@ export const config = {
     aggregateBy: ["ip", "domain"],
   },
 };
-
