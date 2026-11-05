@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.2.3",
     "astro": "^7.4.5",
     "astro-splide": "^2.1.1",
+    "glightbox": "^3.3.1",
     "js-yaml": "^4.1.1",
     "preact": "^10.29.1",
     "react": "^19.3.0",

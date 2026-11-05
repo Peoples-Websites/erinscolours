@@ -3,7 +3,7 @@
 
 @import "./googlefonts.css";
 
-@import "./themes.css";
+/* @import "./themes.css"; */
 
 
 img { margin: 50px; }
@@ -14,7 +14,4 @@ img { margin: 50px; }
   --font-display: "Permanent Marker", cursive;
   --font-body: "Nunito", sans-serif;
 }
-
-
-
 

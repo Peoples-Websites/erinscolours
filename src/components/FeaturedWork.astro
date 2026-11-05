@@ -1,199 +1,90 @@
 ---
-const artworks = [
+import Lightbox from './Lightbox.astro';
+
+const pics = [
+
+  {
+    title: "Construction",
+    image: "/portfolio/construction-1024x640.png",
+    thumbnail: "/portfolio/construction-384x240.png",
+    alt: "A painting of a worker standing in front of a construction site."
+  },
+
   {
     title: "Grow From Within",
-    type: "Acrylic on canvas",
-    image: "/pics/2025/grow-from-within.png",
-    alt: "Figure with a watering can beside a greenhouse",
+    image: "/portfolio/grow-from-within-1124x794.png",
+    thumbnail: "/portfolio/grow-from-within-384x272.png",
+    alt: "A painting of a woman with a watering can next to a greenhouse."
   },
+
   {
     title: "Mother Nature",
-    type: "Acrylic on canvas",
-    image: "/pics/2025/mother-nature.png",
-    alt: "Brightly coloured cat painting by Erin Nicholson",
+    image: "/portfolio/mother-nature-794x1124.png",
+    thumbnail: "/portfolio/mother-nature-272x384.png",
+    alt: "A painting of a female figure embracing the world's plant life."
   },
+
   {
-    title: "Workwise graphic #1",
-    type: "Acrylic on canvas",
-    image: "/pics/2025/workwise-graphic-1.webp",
-    alt: "Example Graphic from Erin'e Workwise Commission",
+    title: "Make Some Music",
+    image: "/portfolio/make-some-music-1124x794.png",
+    thumbnail: "/portfolio/make-some-music-384x272.png",
+    alt: "A painting of a trumpet player and a double bass player."
   },
-  {
-    title: "Fish Shop Mural",
-    type: "Acrylic on wood",
-    image: "/pics/2025/fish-shop-mural.jpeg",
-    alt: "Colourful mural on a fish shop theme",
-  },
-];
+
+]
 ---
 
 <section
-
   id="work"
-  class="
-    bg-teal-50
-    px-6
-    py-20
-    lg:px-8
-    lg:py-28
-  "
+  class="bg-teal-50 px-6 py-20 lg:px-8 lg:py-28"
   aria-labelledby="work-title"
 >
-  <div class="
-      mx-auto
-      max-w-7xl
-    "
-  >
+
+  <div class="mx-auto max-w-7xl">
 
     <!-- Heading -->
-    <div
-      class="
-        mb-10
-        flex
-        flex-col
-        justify-between
-        gap-5
-        sm:flex-row
-        sm:items-end
-      "
-    >
+    <div class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
 
       <div>
-        <p
-          class="
-            font-bold
-            uppercase
-            tracking-[0.2em]
-            text-orange-500
-          "
-        >
-          A little colour
-        </p>
-
-        <h2
-          id="work-title"
-          class="
-            mt-2
-            text-5xl
-            sm:text-6xl
-            font-display
-            tracking-tight
-            text-teal-700
-            rotate-[-2deg]
-          "
-        >
-          Featured Work
-        </h2>
-
-        <div
-          class="
-            mt-5
-            h-2
-            w-60
-            w-80
-            rotate-[-2deg]
-            rounded-full
-            bg-pink-400
-          "
-        ></div>
-
+        <p class="font-bold uppercase tracking-[0.2em] text-orange-500">A little colour</p>
+        <h2 id="work-title" class="mt-2 text-5xl sm:text-6xl font-display tracking-tight text-teal-700 rotate-[-2deg]">Featured Work</h2>
+        <div class="mt-5 h-2 w-60 w-80 rotate-[-2deg] rounded-full bg-pink-400"></div>
       </div>
 
-      <a
-        href="/gallery"
-        class="font-bold text-teal-700 transition hover:text-orange-500"
-      >
-        View more work
-        <span aria-hidden="true">→</span>
-      </a>
+      <a href="/gallery" class="font-bold text-teal-700 transition hover:text-orange-500">View more work<span aria-hidden="true">→</span></a>
+
     </div>
 
-    <!-- Artwork grid -->
-    <div
-      class="
-        grid
-        gap-6
-        sm:grid-cols-2
-        lg:grid-cols-4
-      "
-    >
 
-      {artworks.map((artwork) => (
-        <article class="group">
+    <div class="gallery">
 
-          <a href="/gallery" class="block">
+      {pics.map((pic) => (
 
-            <div
-              class="
-                relative
-                aspect-square
-                overflow-hidden
-                rounded-3xl
-                bg-white
-                shadow-sm
-              "
-            >
-              <img
-                src={artwork.image}
-                alt={artwork.alt}
-                loading="lazy"
-                class="h-full w-full object-contain object-left-top transition duration-500 group-hover:scale-105"
-              />
+        <div>
 
-              <!-- Hover overlay -->
-              <div
-                class="
-                  absolute
-                  inset-0
-                  flex
-                  items-end
-                  bg-gradient-to-t
-                  from-teal-950/50
-                  to-transparent
-                  opacity-0
-                  transition
-                  group-hover:opacity-100
-                "
-              >
-                <span class="
-                    p-5
-                    font-bold
-                    text-white
-                  "
-                >
-                  View artwork →
-                </span>
-
-              </div>
-
-            </div>
-
-            <h3
-              class="
-                mt-4
-                text-lg
-                font-bold
-                text-slate-900
-              "
-            >
-              {artwork.title}
-            </h3>
-
-            <p class="
-                mt-1
-                text-sm
-                text-slate-600
-              "
-            >
-              {artwork.type}
-            </p>
-
+          <a
+            href={pic.image}
+            class="glightbox"
+            data-gallery="portfolio"
+            data-title={pic.title}
+            data-description={pic.alt}
+          >
+            <img
+              src={pic.thumbnail}
+              alt={pic.alt}
+            />
           </a>
 
-        </article>
+          <h3>{pic.title}</h3>
+
+        </div>
+
       ))}
 
     </div>
+
+    <Lightbox />
+
 
   </div>
 

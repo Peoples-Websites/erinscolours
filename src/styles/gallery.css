@@ -1,0 +1,91 @@
+
+.gallery {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  display: grid;
+
+  /*
+  create a fully responsive layout that automatically adds, wraps, and stretches columns 
+  to fit the screen width—all (without requiring any @media queries)
+
+  grid-template-columns
+  this property defines the number and widths of the columns inside a CSS Grid container
+  https://www.youtube.com/watch?v=JYfiaSKeYhE
+
+  repeat( ... )
+  instead of manually typing out the size of every single column (e.g., 220px 220px 220px),
+  the repeat() function acts as a shortcut that duplicates a track pattern
+  https://www.youtube.com/watch?v=NorZwR9B6v8&t=294s
+
+  auto-fit (the first parameter)
+  instead of telling the browser an exact number of columns to make (like repeat(3, ...)),
+  auto-fit tells the browser to automatically calculate how many columns can fit in the row
+  based on the available width
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/repeat
+  https://www.youtube.com/watch?v=wkRWXxxh4FA&t=389s
+  the "fit" magic: If there is extra space left over in the row, auto-fit will stretch
+  the existing columns to take up all that empty space so the layout looks full
+  https://ishadeed.com/article/css-grid-minmax/
+  https://www.hassandev.me/blog/youtube/css-dynamic-grid-layout-with-auto-fit-min-and-max-GjRpjZ8cS_0
+
+  minmax(220px, 1fr) (the second parameter)
+  this defines a flexible size range for each column, establishing a minimum and maximum limit
+  https://www.youtube.com/watch?v=8MrggH3yLH8&t=93s
+  220px (the minimum): A column will never shrink smaller than 220px, if the screen gets
+  so narrow that a column can't even maintain this width, the browser will automatically
+  wrap that column down to a brand new row
+  https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+  https://www.youtube.com/watch?v=wkRWXxxh4FA&t=389s
+  1fr (the maximum): 1fr stands for "one fractional unit", if there is extra space left in the row
+  after fitting in all possible 220px columns, this dictates that the columns should expand equally
+  to absorb all of that remaining space
+  https://www.youtube.com/watch?v=zI7xLUE4Sco&t=128s
+  https://gridbyexample.com/examples/example28/
+
+  on a wide desktop (e.g., 1200px wide): the browser sees it can easily fit five columns
+  of at least 220px, it places them all in one row and uses the 1fr instruction to expand them
+  slightly so they fill the entire 1200px width
+
+  on a tablet (e.g., 600px wide): the browser realizes it can only fit two columns safely
+  (220 × 2 = 440px), a third column would push past the limit (660px), so it automatically
+  drops the remaining items onto a second row, the two columns on each row then stretch out
+  equally to fill the 600px container width
+
+  on a mobile phone (e.g., 350px wide): only one column can comfortably fit, the grid
+  seamlessly transforms into a single-column stacked layout
+  */
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1rem;
+}
+
+.gallery a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+
+  background-color: #bdc;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+
+  background-color: #00fff00;
+}
+
+.gallery a:hover img {
+  transform: scale(1.05);
+}
+
+.gallery a:focus-visible {
+  outline: 3px solid #036937;
+  outline-offset: 4px;
+}
+
