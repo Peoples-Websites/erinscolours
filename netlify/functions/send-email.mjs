@@ -106,7 +106,7 @@ export default async (request) => {
     // send the email
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "peopleswebsites@gmail.com",
+      to: "erinscolours@gmail.com",
       replyTo: cleanEmail,
       subject: "Website contact form message",
       text: `** Hey there you rock star, someone's sent you a message via the website! **
