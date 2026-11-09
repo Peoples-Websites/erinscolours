@@ -4,22 +4,20 @@ import PaintSplash2 from "./paint-splashes/PaintSplash2.astro";
 ---
 
 
-<section class="
-    relative
-    overflow-hidden
-    bg-amber-50
-  "
+<section
+  class="relative overflow-hidden
+  bg-amber-50"
   aria-labelledby="hero-title"
 >
 
   <!-- decorative paint splashes -->
-  <div class="absolute -left-16 -top-16 hidden md:block">
+  <div class="absolute -left-16 -top-16">
     <PaintSplash2 colour="#facc15" rotate={0} class="w-32"/>
   </div>
-  <div class="absolute bottom-0 -left-36">
+  <div class="absolute bottom-6 -left-36">
     <PaintSplash2 colour="#b6f472" rotate={-90} class="w-36"/>
   </div>
-  <div class="absolute bottom-4 -left-24">
+  <div class="absolute bottom-10 -left-24">
     <PaintSplash1 colour="#f472b6" rotate={-50} class="w-40"/>
   </div>
 
@@ -27,10 +25,8 @@ import PaintSplash2 from "./paint-splashes/PaintSplash2.astro";
   <!--   *   *   *   main hero div   *   *   *   -->
 
   <div class="
-      mx-auto
-      grid
-      max-w-7xl
-      lg:grid-cols-2  <!--two columns at large size -->
+      mx-auto grid max-w-7xl gap-12
+      lg:grid-cols-2 lg:gap-20  <!--two columns at large size -->
     "
   >
 
@@ -98,7 +94,9 @@ import PaintSplash2 from "./paint-splashes/PaintSplash2.astro";
             leading-snug
             text-indigo-950
           "
-        >Art and People. Brighter Together.</p>
+        >
+          Art and People. Brighter Together.
+        </p>
 
         <p
           class="
@@ -149,21 +147,15 @@ import PaintSplash2 from "./paint-splashes/PaintSplash2.astro";
       min-h-[450px]
       lg:min-h-[650px]
       overflow-hidden
-
     ">
 
       <img
         class="
-          max-w-auto
-          max-h-[450px]
-          lg:max-w-auto
-          lg:max-h-[650px]
+          max-w-auto max-h-[450px]
+          lg:max-w-auto lg:max-h-[650px]
         "
-        src="/pics/2025/make-some-music.jpeg"
-        alt="A colourful painting by Erin Nicholson called "Make Some Music"
+        src="/pics/2025/make-some-music.jpeg" alt="A colourful painting by Erin Nicholson called "Make Some Music"
       />
-
-      <!-- Soft edge - probably delete --><!--<div class="absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-amber-50 to-transparent lg:block"></div>-->
 
     </div>
 

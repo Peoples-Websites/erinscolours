@@ -21,7 +21,7 @@ import PaintSplash3 from "./paint-splashes/PaintSplash2.astro";
 
   <!-- Decorative paint -->
   <div class="absolute -left-8 -top-8 hidden md:block">
-    <PaintSplash2 colour="#15ccfa" rotate={10} class="w-32"/>
+    <PaintSplash2 colour="#15ccfa" rotate={10} class="w-40"/>
   </div>
   <div class="absolute right-16 bottom-48 hidden md:block">
     <PaintSplash3 colour="#cc15fa" rotate={0} class="w-64"/>
@@ -29,13 +29,8 @@ import PaintSplash3 from "./paint-splashes/PaintSplash2.astro";
 
   <div
     class="
-      relative
-      mx-auto
-      grid
-      max-w-6xl
-      items-center
-      gap-10
-      lg:grid-cols-2
+      relative mx-auto grid max-w-7xl items-center gap-12
+      lg:grid-cols-2 lg:gap-20  <!--two columns at large size -->
     "
   >
 
