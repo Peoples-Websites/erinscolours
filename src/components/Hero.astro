@@ -1,6 +1,6 @@
 ---
-import PaintSplash1 from "./PaintSplash1.astro";
-import PaintSplash2 from "./PaintSplash2.astro";
+import PaintSplash1 from "./paint-splashes/PaintSplash1.astro";
+import PaintSplash2 from "./paint-splashes/PaintSplash2.astro";
 ---
 
 
@@ -13,14 +13,14 @@ import PaintSplash2 from "./PaintSplash2.astro";
 >
 
   <!-- decorative paint splashes -->
-  <div class="absolute -left-16 -top-24 hidden md:block">
-    <PaintSplash2 colour="#facc15" rotate={0} class="w-64"/>
+  <div class="absolute -left-16 -top-16 hidden md:block">
+    <PaintSplash2 colour="#facc15" rotate={0} class="w-32"/>
   </div>
-  <div class="absolute bottom-16 -left-80">
-    <PaintSplash2 colour="#b6f472" rotate={-90} class="w-72"/>
+  <div class="absolute bottom-0 -left-36">
+    <PaintSplash2 colour="#b6f472" rotate={-90} class="w-36"/>
   </div>
-  <div class="absolute bottom-24 -left-32">
-    <PaintSplash1 colour="#f472b6" rotate={-45} class="w-80"/>
+  <div class="absolute bottom-4 -left-24">
+    <PaintSplash1 colour="#f472b6" rotate={-50} class="w-40"/>
   </div>
 
 
